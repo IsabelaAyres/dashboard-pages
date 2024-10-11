@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Power BI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        // URLs dos links para navegar
+        const urls = [
+            "https://app.powerbi.com/reportEmbed?reportId=9b204de8-965f-4520-ade9-b4208377bdd4&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false",
+            "https://app.powerbi.com/reportEmbed?reportId=94100330-df77-4c7b-96e4-2526aa1c1812&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false",
+            "https://app.powerbi.com/reportEmbed?reportId=c275fac0-f696-4070-9f03-3a89e5abe825&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false"
+        ];
+
+        let currentIndex = 0;
+
+        // Função para mudar o link do iframe
+        function changeIframeSrc() {
+            document.querySelector('iframe').src = urls[currentIndex];
+            currentIndex = (currentIndex + 1) % urls.length;
+        }
+
+        // Muda o link a cada 2 minutos (120000 milissegundos)
+        setInterval(changeIframeSrc, 120000);
+
+        // Atualiza a página a cada 5 minutos (300000 milissegundos)
+        setInterval(function(){
+            location.reload();
+        }, 300000);
+
+        // Função para entrar em tela cheia
+        function enterFullscreen() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        // Entra em tela cheia ao carregar a página
+        window.onload = enterFullscreen;
+    </script>
+</head>
+<body>
+    <iframe src="https://app.powerbi.com/reportEmbed?reportId=87ef8f30-8d07-45b5-9b96-b5d94a534fc2&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false" allowfullscreen></iframe>
+</body>
+</html>
