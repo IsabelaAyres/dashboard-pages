@@ -23,8 +23,9 @@
     <script>
         // URLs dos links para navegar
         const urls = [
-            "https://app.powerbi.com/reportEmbed?reportId=363fc6a7-6a48-44f2-ad63-16164e4545be&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false",
-            "https://app.powerbi.com/reportEmbed?reportId=d8571c61-af6b-45ce-900b-1f9d77256ccf&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false"
+            "https://app.powerbi.com/reportEmbed?reportId=173a2194-a3ab-45f7-8790-8d73f730cd24&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false",
+            "https://app.powerbi.com/reportEmbed?reportId=d8571c61-af6b-45ce-900b-1f9d77256ccf&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false",
+            "https://app.powerbi.com/reportEmbed?reportId=b45b28a1-6d2f-41d4-ab07-7ef88e4b1e81&autoAuth=true&ctid=30cf3a87-45e5-437f-a5cb-eff8e766e152&navContentPaneEnabled=false"
         ];
 
         let currentIndex = 0;
@@ -35,8 +36,8 @@
             currentIndex = (currentIndex + 1) % urls.length;
         }
 
-        // Muda o link a cada 5 minutos (300000 milissegundos)
-        setInterval(changeIframeSrc, 300000);
+        // Muda o link a cada 10 minutos (600000 milissegundos)
+        setInterval(changeIframeSrc, 600000);
 
         // Atualiza a página a cada 30 minutos (1800000 milissegundos)
         setInterval(function(){
