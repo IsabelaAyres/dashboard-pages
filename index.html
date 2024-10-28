@@ -33,16 +33,15 @@
         function changeIframeSrc() {
             document.querySelector('iframe').src = urls[currentIndex];
             currentIndex = (currentIndex + 1) % urls.length;
-            setTimeout(changeIframeSrc, currentIndex === 1 ? 120000 : 300000); // 2 minutos para a segunda URL, 5 minutos para as demais
         }
 
-        // Inicia a mudança de URL
-        setTimeout(changeIframeSrc, 120000); // 2 minutos para a segunda URL
+        // Muda o link a cada 2 minutos (120000 milissegundos)
+        setInterval(changeIframeSrc, 120000);
 
-        // Atualiza a página a cada 60 minutos (3600000 milissegundos)
+        // Atualiza a página a cada 60 minutos (3000000 milissegundos)
         setInterval(function(){
             location.reload();
-        }, 3600000);
+        }, 3000000);
 
         // Função para entrar em tela cheia
         function enterFullscreen() {
