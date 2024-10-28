@@ -33,11 +33,11 @@
         function changeIframeSrc() {
             document.querySelector('iframe').src = urls[currentIndex];
             currentIndex = (currentIndex + 1) % urls.length;
-            setTimeout(changeIframeSrc, currentIndex === 0 ? 120000 : 300000); // 2 minutos para a primeira URL, 5 minutos para as demais
+            setTimeout(changeIframeSrc, currentIndex === 1 ? 120000 : 300000); // 2 minutos para a segunda URL, 5 minutos para as demais
         }
 
         // Inicia a mudança de URL
-        setTimeout(changeIframeSrc, 120000); // 2 minutos para a primeira URL
+        setTimeout(changeIframeSrc, 120000); // 2 minutos para a segunda URL
 
         // Atualiza a página a cada 60 minutos (3600000 milissegundos)
         setInterval(function(){
